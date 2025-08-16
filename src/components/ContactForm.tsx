@@ -1,8 +1,22 @@
 "use client";
 
+declare global {
+  interface Window {
+    Calendly?: {
+      initInlineWidget: (options: {
+        url: string;
+        parentElement: HTMLElement;
+        prefill?: Record<string, any>;
+        utm?: Record<string, any>;
+      }) => void;
+    };
+  }
+}
+
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/MovingBorder";
 import { motion } from "framer-motion";
+
 
 const ContactForm: React.FC = () => {
   const [showCalendly, setShowCalendly] = useState(false);
@@ -66,7 +80,7 @@ const ContactForm: React.FC = () => {
       setIsSuccess(true);
       setIsSuccess(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (error) {
+    } catch (error: any) {
       setMessage(
         `Oops! Something went wrong while sending your message. Please try again later. (${error.message})`
       );
