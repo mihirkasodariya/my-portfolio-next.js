@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import { motion } from "framer-motion";
+import { motion, easeOut, Transition } from "framer-motion"; 
 
 interface TimelineItem {
   company: string;
@@ -33,15 +33,19 @@ const timelineData: TimelineItem[] = [
 // Variants for cards
 const cardVariants = (isLeft: boolean) => ({
   hidden: { opacity: 0, x: isLeft ? -80 : 80 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: easeOut } },
 });
 
-// Variants for dots
 const dotVariants = {
   hidden: { scale: 0 },
   visible: {
     scale: 1,
-    transition: { type: "spring", stiffness: 300, damping: 15, delay: 0.2 },
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 15,
+      delay: 0.2,
+    } as Transition,
   },
 };
 
