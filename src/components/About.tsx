@@ -7,7 +7,7 @@ import { Button } from "@/components/MovingBorder";
 
 interface Tech {
   icon: ReactNode | string; // can be SVG path or emoji
-  color: string;
+  name: string;
   isImage?: boolean;
 }
 
@@ -179,10 +179,10 @@ export default function AboutMe() {
                           delay: index * 0.15,
                         }}
                         whileHover={{
-                          boxShadow: `0 0 15px ${tech.color}`,
+                          boxShadow: `0 0 15px`,
                         }}
                         className="flex-col flex items-center justify-center cursor-pointer transition-shadow duration-300"
-                        style={{ color: tech.color }}
+                        style={{ color: "" }}
                       >
                         {tech.isImage ? (
                           <Image
@@ -212,7 +212,6 @@ export default function AboutMe() {
                         delay: index * 0.15,
                       }}
                       className="h-25 w-25 flex-col space-y-2 rounded-[20px] flex items-center justify-center cursor-pointer bg-white/5 backdrop-blur-sm transition-shadow duration-300"
-                      style={{ color: tech.color }}
                     >
                       {tech.isImage ? (
                         <Image
