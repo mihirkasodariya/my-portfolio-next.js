@@ -78,6 +78,7 @@ import "./globals.css";
 import SplashCursor from "./../components/SplashCursor";
 import Header from "@/components/ui/Header";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -243,6 +244,7 @@ export default function RootLayout({
 
         {/* Cursor effect */}
         <SplashCursor />
+        <Analytics />
       </body>
     </html>
   );
