@@ -29,8 +29,8 @@ export function Button({
   duration,
   className,
   ...otherProps
-}: ButtonProps){
-  
+}: ButtonProps) {
+
   return (
     <Component
       className={cn(
@@ -85,8 +85,8 @@ export const MovingBorder = ({
   rx,
   ry,
   ...otherProps
-}: MovingBorderProps)=> {
-const pathRef = useRef<SVGRectElement>(null);
+}: MovingBorderProps) => {
+  const pathRef = useRef<SVGRectElement>(null);
   const progress = useMotionValue(0);
 
   useAnimationFrame((time) => {
@@ -97,12 +97,27 @@ const pathRef = useRef<SVGRectElement>(null);
     }
   });
 
-  const x = useTransform(progress, (val) =>
-    pathRef.current?.getPointAtLength(val)?.x
-  );
-  const y = useTransform(progress, (val) =>
-    pathRef.current?.getPointAtLength(val)?.y
-  );
+  const x = useTransform(progress, (val) => {
+    if (!pathRef.current) return 0;
+    const length = pathRef.current.getTotalLength();
+    if (!length || isNaN(length)) return 0; // Check for valid length
+    try {
+      return pathRef.current.getPointAtLength(val).x;
+    } catch (e) {
+      return 0; // Fallback if getPointAtLength fails
+    }
+  });
+
+  const y = useTransform(progress, (val) => {
+    if (!pathRef.current) return 0;
+    const length = pathRef.current.getTotalLength();
+    if (!length || isNaN(length)) return 0; // Check for valid length
+    try {
+      return pathRef.current.getPointAtLength(val).y;
+    } catch (e) {
+      return 0; // Fallback if getPointAtLength fails
+    }
+  });
 
   const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
 
