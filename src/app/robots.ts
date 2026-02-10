@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/api/',
         },
-        sitemap: 'https://mihirkasodariya.com/sitemap.xml',
+        sitemap: 'https://mihirkasodariya.vercel.app/sitemap.xml',
     };
 }

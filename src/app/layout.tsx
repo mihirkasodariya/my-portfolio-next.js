@@ -105,7 +105,7 @@ export const metadata: Metadata = {
     "Mihir Kasodariya Software Engineer",
     "Freelance Web Developer India",
   ],
-  authors: [{ name: "Mihir Kasodariya", url: "https://mihirkasodariya.com" }],
+  authors: [{ name: "Mihir Kasodariya", url: "https://mihirkasodariya.vercel.app" }],
   creator: "Mihir Kasodariya",
   publisher: "Mihir Kasodariya",
   formatDetection: {
@@ -114,17 +114,17 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: "https://mihirkasodariya.com",
+    canonical: "https://mihirkasodariya.vercel.app",
   },
   openGraph: {
     title: "Mihir Kasodariya | Professional Portfolio",
     description:
       "Explore the work of Mihir Kasodariya, a dedicated Developer building the future of the web with MERN & Next.js.",
-    url: "https://mihirkasodariya.com",
+    url: "https://mihirkasodariya.vercel.app",
     siteName: "Mihir Kasodariya Portfolio",
     images: [
       {
-        url: "https://mihirkasodariya.com/og-image.jpg",
+        url: "https://mihirkasodariya.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Mihir Kasodariya - Full Stack Developer",
@@ -138,7 +138,7 @@ export const metadata: Metadata = {
     title: "Mihir Kasodariya | MERN Stack Developer",
     description:
       "Building fast, secure, and scalable web applications with modern tech stacks.",
-    images: ["https://mihirkasodariya.com/og-image.jpg"],
+    images: ["https://mihirkasodariya.vercel.app/og-image.jpg"],
     creator: "@mihirkasodariya",
   },
   robots: {
@@ -178,8 +178,8 @@ export default function RootLayout({
               "@type": "Person",
               name: "Mihir Kasodariya",
               alternateName: "Kasodariya Mihir",
-              url: "https://mihirkasodariya.com",
-              image: "https://mihirkasodariya.com/assets/hero.svg",
+              url: "https://mihirkasodariya.vercel.app",
+              image: "https://mihirkasodariya.vercel.app/assets/hero.svg",
               sameAs: [
                 "https://github.com/mihirkasodariya",
                 "https://linkedin.com/in/mihirkasodariya",
@@ -214,7 +214,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "Mihir Kasodariya Portfolio",
-              url: "https://mihirkasodariya.com",
+              url: "https://mihirkasodariya.vercel.app",
               author: "Mihir Kasodariya",
               description: "Portfolio of MERN Stack Developer Mihir Kasodariya"
             })
