@@ -32,14 +32,14 @@ export default function Home() {
     >
       {/* Content Section */}
       <div className="xl:max-w-4/6 lg:max-w-1/2 w-full space-y-6 sm:space-y-8 lg:space-y-5 px-4 sm:px-0 mt-8 lg:mt-0 z-10">
-        <motion.span
+        <motion.h1
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[60px] font-bold block"
         >
-          Hi, I am Mihir
-        </motion.span>
+          Hi, I am Mihir Kasodariya
+        </motion.h1>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -192,7 +192,7 @@ export default function Home() {
             ease: "easeInOut",
           }}
           src="/assets/hero.svg"
-          alt="Hero"
+          alt="Mihir Kasodariya - Full Stack MERN Developer"
           className="w-[80%] max-w-[300px] sm:max-w-[400px] md:max-w-[480px] lg:max-w-[550px] xl:max-w-[650px] h-auto object-contain drop-shadow-[0_0_20px_rgba(201,243,29,0.25)]"
         />
       </motion.div>

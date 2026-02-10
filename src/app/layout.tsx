@@ -90,24 +90,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mihir Kasodariya | MERN Stack Developer",
+  title: "Mihir Kasodariya | MERN Stack Developer & Software Engineer",
   description:
-    "Portfolio of Mihir Kasodariya - MERN Stack Developer specializing in Node.js, React.js, Next.js, and scalable web applications.",
+    "Official portfolio of Mihir Kasodariya. A highly skilled MERN Stack Developer specializing in Node.js, React.js, Next.js, and building scalable, high-performance web applications.",
   keywords: [
     "Mihir Kasodariya",
+    "Mihir Kasodariya Developer",
     "Kasodariya Mihir",
-    "MERN Stack Developer",
-    "Node.js Developer",
-    "React.js Developer",
-    "Next.js Portfolio",
-    "Full Stack Developer",
-    "Freelance MERN Developer",
+    "MERN Stack Developer India",
+    "Full Stack Developer Portfolio",
+    "Next.js Expert",
+    "React.js Developer Surat",
+    "Node.js Backend Developer",
+    "Mihir Kasodariya Software Engineer",
+    "Freelance Web Developer India",
   ],
   authors: [{ name: "Mihir Kasodariya", url: "https://mihirkasodariya.com" }],
+  creator: "Mihir Kasodariya",
+  publisher: "Mihir Kasodariya",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "https://mihirkasodariya.com",
+  },
   openGraph: {
-    title: "Mihir Kasodariya | MERN Stack Developer",
+    title: "Mihir Kasodariya | Professional Portfolio",
     description:
-      "Passionate about building scalable, fast, and secure web applications.",
+      "Explore the work of Mihir Kasodariya, a dedicated Developer building the future of the web with MERN & Next.js.",
     url: "https://mihirkasodariya.com",
     siteName: "Mihir Kasodariya Portfolio",
     images: [
@@ -115,17 +127,30 @@ export const metadata: Metadata = {
         url: "https://mihirkasodariya.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Mihir Kasodariya Portfolio",
+        alt: "Mihir Kasodariya - Full Stack Developer",
       },
     ],
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Mihir Kasodariya | MERN Stack Developer",
     description:
-      "Full Stack Developer specializing in MERN, Next.js, and scalable apps.",
+      "Building fast, secure, and scalable web applications with modern tech stacks.",
     images: ["https://mihirkasodariya.com/og-image.jpg"],
+    creator: "@mihirkasodariya",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   icons: {
     icon: "/favicon1.ico",
@@ -142,12 +167,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://mihirkasodariya.com" />
-
-        {/* Structured Data (JSON-LD for Person Schema) */}
+        {/* Structured Data (JSON-LD) */}
         <Script
-          id="structured-data"
+          id="person-schema"
           type="application/ld+json"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -155,16 +177,47 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Mihir Kasodariya",
-              url: "https://yourdomain.com",
-              jobTitle: "MERN Stack Developer",
+              alternateName: "Kasodariya Mihir",
+              url: "https://mihirkasodariya.com",
+              image: "https://mihirkasodariya.com/assets/hero.svg",
               sameAs: [
                 "https://github.com/mihirkasodariya",
-                "https://www.upwork.com/freelancers/~01e115c6a20bfa3866?mp_source=share",
                 "https://linkedin.com/in/mihirkasodariya",
                 "https://www.instagram.com/mihir_kasodariya",
                 "https://x.com/mihirkasodariya",
+                "https://www.upwork.com/freelancers/~01e115c6a20bfa3866",
+              ],
+              jobTitle: "MERN Stack Developer",
+              worksFor: {
+                "@type": "Organization",
+                name: "Freelance",
+              },
+              description: "Full Stack Web Developer specializing in MERN Stack, Next.js, and AWS.",
+              knowsAbout: [
+                "React.js",
+                "Next.js",
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "Web Development",
+                "Software Engineering",
               ],
             }),
+          }}
+        />
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Mihir Kasodariya Portfolio",
+              url: "https://mihirkasodariya.com",
+              author: "Mihir Kasodariya",
+              description: "Portfolio of MERN Stack Developer Mihir Kasodariya"
+            })
           }}
         />
       </head>
